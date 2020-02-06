@@ -1,0 +1,45 @@
+body {
+    background-color: white;
+   font-family: serif;
+   font-weight: 200;
+   font-size: 16px;
+  }
+  
+  section {
+    padding: 1em 0;
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin: center;
+    padding: 0;
+    list-style-type: none;
+    color: black;
+    overflow: hidden;
+    
+  }
+  
+  th {
+    padding: 0 0.5em;
+    text-align: center;
+    
+  }
+  
+  tr:hover {
+    border-bottom: solid 1px #e0dddd;
+    line-height: 1.75;
+   
+  }
+  
+  td {
+    text-align: right;
+    padding: 0 0.5em;
+    background-color: aliceblue;
+    
+  }
+  
+  .good {
+    background-color: rgb(229, 160, 220);
+    
+  }
+

@@ -5,6 +5,7 @@ d3.csv("../../data/cereal.csv").then(data => {
 
     // select the table container in the HTML
     const table = d3.select("#d3-table"); 
+    
 
     // ** Header **/
     const thead = table.append("thead"); 
@@ -12,8 +13,7 @@ d3.csv("../../data/cereal.csv").then(data => {
         .append("tr")
         .append("th")
         .attr("colspan", "7")
-        .text("Different Cereals");
-
+        .text("Different Cereals")
         
 
     thead
@@ -21,9 +21,9 @@ d3.csv("../../data/cereal.csv").then(data => {
         .selectAll("th")
         .data(data.columns)
         .join("td")
-        .attr("class", d => d == "protein" ? 'high' : null)
-        .text(d => d); 
-    
+        .text(function(column) {
+            return column.charAt(0).toUpperCase() + column.substr(1);}); 
+            // capitalize first letter of cols 
     
     /** Body **/
     // rows 
@@ -32,6 +32,7 @@ d3.csv("../../data/cereal.csv").then(data => {
         .selectAll("tr")
         .data(data)
         .join("tr")
+       // .attr("class", d => d.protein == "protein" ? 'high' : null)
         ;
 
 
@@ -40,8 +41,8 @@ d3.csv("../../data/cereal.csv").then(data => {
         .selectAll("td")
         .data(d => Object.values(d))
         .join("td")
-        .attr("class", d => d == "protein" ? 'high' : null)
-        .text(d => d)
+        .attr("class", d => d == "Basic 4" || d == "Froot Loops" ? 'good' : null )
+        .text(function(d) { return d ;})
         ;
-    
-    })
+
+})
