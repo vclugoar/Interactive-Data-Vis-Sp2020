@@ -27,7 +27,20 @@ d3.csv("../../data/surveyResults.csv").then(data => {
     .append("tbody")
     .selectAll("tr")
     .data(data)
-    .join("tr");
+    .join("tr")
+    .attr("class", d => { 
+      let tag ; 
+      // could also do d.timestamp if it's one word. if there are spaces need the " " 
+      if (+d["Python or R (or any data analysis tool)"] > 3) { 
+          tag = "python"; 
+      }
+      
+      if (+d["Terminal (Bash/Zsh)"] > 2) { 
+        tag = "terminal"; 
+      }
+      //console.log(d);
+      return tag; 
+    }) 
 
   // cells
   rows

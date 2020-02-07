@@ -1,5 +1,5 @@
 // load csv 
-d3.csv("../../data/cereal.csv").then(data => {
+d3.csv("./data/cereal.csv").then(data => {
     // once the data loads, console log it 
     console.log("data", data);
 
@@ -33,6 +33,18 @@ d3.csv("../../data/cereal.csv").then(data => {
         .data(data)
         .join("tr")
        // .attr("class", d => d.protein == "protein" ? 'high' : null)
+       .attr("class", d => { 
+        let tag ; 
+        // could also do d.timestamp if it's one word. if there are spaces need the " " 
+        if (+d["Protein"] > 2) { 
+            tag = "name"; 
+        }
+        // re
+        //console.log(d);
+
+        return tag; 
+
+    })
         ;
 
 
@@ -42,6 +54,7 @@ d3.csv("../../data/cereal.csv").then(data => {
         .data(d => Object.values(d))
         .join("td")
         .attr("class", d => d == "Basic 4" || d == "Froot Loops" ? 'good' : null )
+        
         .text(function(d) { return d ;})
         ;
 
