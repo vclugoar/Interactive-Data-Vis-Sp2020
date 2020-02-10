@@ -1,6 +1,6 @@
 // data load
 // reference for d3.autotype: https://github.com/d3/d3-dsv#autoType
-d3.csv("../../data/squirrelActivities.csv", d3.autoType).then(data => {
+d3.csv("../data/squirrelActivities.csv", d3.autoType).then(data => {
   console.log(data);
 
   /** CONSTANTS */
