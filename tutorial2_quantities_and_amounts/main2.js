@@ -41,7 +41,7 @@ d3.csv("../data/squirrelActivities.csv", d3.autoType).then(data => {
     .select("#d3-container")
     .append("svg")
     .attr("width", width)
-    .attr("height", height);
+    .attr("height", height );
 
   // append rects
   const rect = svg

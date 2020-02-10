@@ -2,6 +2,9 @@ body {
     /* ref: https://fonts.google.com/specimen/Source+Sans+Pro?selection.family=Source+Sans+Pro */
     font-family: 'Source Sans Pro', sans-serif;
     padding: 1em 3em;
+    background-color: floralwhite;
+    margin:0 auto; 
+    
   }
   
   .label {
@@ -13,4 +16,9 @@ body {
     font-size: 14px;
     color: white;
     text-transform: capitalize;
+  }
+
+  #d3container { 
+    margin: 0 auto; 
+
   }
