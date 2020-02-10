@@ -45,20 +45,21 @@ d3.csv("../data/squirrelActivities.csv", d3.autoType).then(data => {
       .attr("fill", "steelblue")
   
     // append text
-    const text = svg
-      .selectAll("text")
-      .data(data)
-      .join("text")
-      .attr("class", "label")
-      // this allows us to position the text in the center of the bar
-      .attr("x", d => xScale(d.activity) + (xScale.bandwidth() / 2))
-      .attr("y", d => yScale(d.count))
-      .text(d => d.count)
-      .attr("dy", "1.25em");
+    // const text = svg
+    //   .selectAll("text")
+    //   .data(data)
+    //   .join("text")
+    //   .attr("class", "label")
+    //   // this allows us to position the text in the center of the bar
+    //   .attr("x", d => xScale(d.activity) + (xScale.bandwidth() / 2))
+    //   .attr("y", d => yScale(d.count))
+    //   .text(d => d.count)
+    //   .attr("dy", "1.25em");
   
     svg
       .append("g")
       .attr("class", "axis")
+    //  .attr("transform","rotate(90 200 200)")
       .attr("transform", `translate(0, ${height - margin.bottom})`)
       .call(xAxis);
   });
