@@ -12,4 +12,5 @@ body {
   .axis {
     font-size: 14px;
     color: white;
+    text-transform: capitalize;
   }
