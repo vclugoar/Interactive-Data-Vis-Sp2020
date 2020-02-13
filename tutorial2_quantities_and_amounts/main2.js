@@ -6,7 +6,7 @@ d3.csv("../data/squirrelActivities.csv", d3.autoType).then(data => {
   /** CONSTANTS */
   // constants help us reference the same values throughout our code
   const width = window.width * 7 ,
-    height = window.innerHeight /2,
+    height = window.innerHeight /1.5,
     paddingInner = 0.2,
     margin = { top: 100, bottom: 60, left: 50, right: 40 };
 
@@ -66,7 +66,7 @@ d3.csv("../data/squirrelActivities.csv", d3.autoType).then(data => {
     .attr("y", d => yScale(d.activity) + 15 )
 // (yScale.bandwidth() ))
     
-    .attr("x", d => xScale(d.count) + 20)
+    .attr("x", d => xScale(d.count) + 15 )
     .attr("text-anchor", "left")
     .text(d => d.count)
     .attr("dy", "0.9em");
