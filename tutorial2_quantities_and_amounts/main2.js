@@ -66,7 +66,7 @@ d3.csv("../data/squirrelActivities.csv", d3.autoType).then(data => {
     .attr("y", d => yScale(d.activity) + 15 )
 // (yScale.bandwidth() ))
     
-    .attr("x", d => xScale(d.count) + 15 )
+    .attr("x", d => xScale(d.count) + 20 )
     .attr("text-anchor", "left")
     .text(d => d.count)
     .attr("dy", "0.9em");
