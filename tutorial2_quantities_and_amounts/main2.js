@@ -5,10 +5,10 @@ d3.csv("../data/squirrelActivities.csv", d3.autoType).then(data => {
 
   /** CONSTANTS */
   // constants help us reference the same values throughout our code
-  const width = window.innerWidth * 0.9,
-    height = window.innerHeight / 3,
+  const width = window.width * 7 ,
+    height = window.innerHeight /2,
     paddingInner = 0.2,
-    margin = { top: 10, bottom: 20, left: 20, right: 20 };
+    margin = { top: 100, bottom: 20, left: 20, right: 20 };
 
   /** SCALES */
   // reference for d3.scales: https://github.com/d3/d3-scale
@@ -62,15 +62,18 @@ d3.csv("../data/squirrelActivities.csv", d3.autoType).then(data => {
     .join("text")
     .attr("class", "label")
     // this allows us to position the text in the center of the bar
-    .attr("y", d => yScale(d.activity)+5) 
-    .attr("x", d => xScale(d.count)+18)
+  //  .attr("y", d => yScale(d.activity  + (yScale.bandwidth() / 2)) 
+    .attr("y", d => yScale(d.activity) + 15 )
+// (yScale.bandwidth() ))
+    
+    .attr("x", d => xScale(d.count) + 20)
     .text(d => d.count)
     .attr("dy", "0.9em");
 
   svg
     .append("g") // creating a group 
     .attr("class", "axis")
-    .attr("transform", `translate(0, ${margin.left, margin.top-10})`)
+    .attr("transform", `rotate(0, ${margin.left, margin.top-10})`)
     .call(yAxis)
     ;
 });
