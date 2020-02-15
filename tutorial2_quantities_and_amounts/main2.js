@@ -74,7 +74,7 @@ d3.csv("../data/squirrelActivities.csv", d3.autoType).then(data => {
   svg
     .append("g") // creating a group 
     .attr("class", "axis")
-    .attr("transform", `rotate(0, ${margin.left, margin.top-10})`)
+    .attr("transform", `rotate(0, ${margin.right, margin.bottom-10})`)
     .call(yAxis)
     ;
 });
