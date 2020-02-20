@@ -118,7 +118,7 @@ function draw() {
 
   const dot = svg
     .selectAll(".dot")
-    .data(filteredData, d => d.name) // use `d.name` as the `key` to match between HTML and data elements
+    .data(filteredData, d => d.BoroughL) // use `d.name` as the `key` to match between HTML and data elements
     .join(
       enter =>
         // enter selections -- all data elements that don't have a `.dot` element attached to them yet
