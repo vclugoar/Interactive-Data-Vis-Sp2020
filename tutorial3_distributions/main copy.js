@@ -3,7 +3,7 @@
  * */
 const width = window.innerWidth * 0.7,
   height = window.innerHeight * 0.7,
-  margin = { top: 20, bottom: 50, left: 60, right: 40 },
+  margin = { top: 80, bottom: 70, left: 100, right: 70 },
   radius = 5;
 
 /** these variables allow us to access anything we manipulate in
@@ -134,13 +134,16 @@ function draw() {
             else if (d.BoroughL === "M") return "red"; 
             else return "purple";
           })
+          //.ease(500)
           .attr("r", radius)
           .attr("cy", d => yScale(d.perc_poverty))
           .attr("cx", d => margin.left) // initial value - to be transitioned
           .call(enter =>
               enter
                 .attr("cx", d => xScale(d.h_score))
+               // .easeLinear(50)
                 .transition() // initialize transition
+                
                 .delay(d => 500 * d.h_score) // delay on each element
               //  .duration(500) // duration 500ms
                 //.styleTween("background-color",function() { return orangewhite; } )
