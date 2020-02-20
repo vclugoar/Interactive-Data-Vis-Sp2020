@@ -143,6 +143,7 @@ function draw() {
                 .attr("cx", d => xScale(d.h_score))
                // .easeLinear(50)
                 .transition() // initialize transition
+                .style("opacity", .9)
                 
                 .delay(d => 500 * d.h_score) // delay on each element
               //  .duration(500) // duration 500ms
@@ -154,6 +155,8 @@ function draw() {
             // update selections -- all data elements that match with a `.dot` element
             update
               .transition()
+              .style("opacity", .9)
+              .style("size", 12)
               // .attrTween("fill", function() {
               //   return function(t) {
                  
