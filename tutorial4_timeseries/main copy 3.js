@@ -184,7 +184,7 @@ const line = svg
   .call(selection =>
     selection
       .transition() // sets the transition on the 'Enter' + 'Update' selections together.
-      .duration(1000)
+      .duration(500)
       .attr("opacity", 1)
       .attr("d", d => areaFunc(d))
   );
