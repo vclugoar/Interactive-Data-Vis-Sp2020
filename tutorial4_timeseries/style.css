@@ -1,11 +1,12 @@
 body {
     /* ref: https://fonts.google.com/specimen/Source+Sans+Pro?selection.family=Source+Sans+Pro */
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "superfrench", "times";
     padding: 1em 3em;
   }
   
   .dot {
     cursor: pointer;
+    fill: purple
   }
   
   .dot:hover {
@@ -21,3 +22,7 @@ body {
     text-anchor: middle;
   }
   
+  .trend {
+    fill: lightblue;
+    stroke: darkcyan;
+  }

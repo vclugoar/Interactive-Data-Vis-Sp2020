@@ -1,7 +1,7 @@
 /* CONSTANTS AND GLOBALS */
 const width = window.innerWidth * 0.7,
   height = window.innerHeight * 0.7,
-  margin = { top: 20, bottom: 50, left: 60, right: 40 },
+  margin = { top: 20, bottom: 70, left: 80, right: 80 },
   radius = 5,
   default_selection = "Select a Movement";
 
@@ -126,10 +126,11 @@ d3.select("g.y-axis")
   .call(yAxis.scale(yScale)); // this updates the yAxis' scale to be our newly updated one
 
 // we define our line function generator telling it how to access the x,y values for each point
-const lineFunc = d3
-  .line()
+const areaFunc = d3
+  .area()
   .x(d => xScale(d.year))
-  .y(d => yScale(d.count));
+  .y0(height-70)
+  .y1(d => yScale(d.count));
 
  const dot = svg
   .selectAll(".dot")
@@ -143,7 +144,7 @@ const lineFunc = d3
         .attr("r", radius)
         .attr("cy", height - margin.bottom) // initial value - to be transitioned
         .attr("cx", d => xScale(d.year))
-        .attr("opacity", 0.7),
+        .attr("opacity", 1),
       
     update => update,
     exit =>
@@ -184,7 +185,7 @@ const line = svg
       .transition() // sets the transition on the 'Enter' + 'Update' selections together.
       .duration(1000)
       .attr("opacity", 1)
-      .attr("d", d => lineFunc(d))
+      .attr("d", d => areaFunc(d))
   );
   
 
