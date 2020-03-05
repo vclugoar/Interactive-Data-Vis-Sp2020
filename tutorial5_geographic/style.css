@@ -1,0 +1,12 @@
+body {
+    /* ref: https://fonts.google.com/specimen/Source+Sans+Pro?selection.family=Source+Sans+Pro */
+    font-family: "Times New Roman", sans-serif;
+    padding: 1em 3em;
+    color: black;
+    text-align: center;
+    
+  }
+  
+  path.state {
+    stroke: black;
+  }

@@ -1,13 +1,29 @@
 <!DOCTYPE html>
   <head>
     <meta charset="utf-8">
+
+    <!-- this is the title that goes in the browser tab name  -->
     <title>Interactive Data Visualization Tutorial</title>
-    <link rel="stylesheet" href="./style.css">
+
+    <!-- custom font: https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    Welcome to Interactive Data Visualization Tutorials
+    <header>
+      <h1>Distribution of Starbucks Locations in the United States </h1>
+
+      <H3> </H3>Hover over for more information on each Starbucks location.</H3>
+    </header>
+
+    <!-- all we need is an element to select -->
+    <div id="hover-content"></div>
     <div id="d3-container"> </div>
+
+    <!-- this is the line that loads in d3 -->
     <script src="../lib/d3.js"></script>
-    <script src="main.js"></script>
+
+    <!-- this is the line that loads in the main js script -->
+    <script src="sec.js"></script>
   </body>
 </html>
